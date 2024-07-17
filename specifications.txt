@@ -1,0 +1,19 @@
+#
+# Chidozie Chukwuemeka
+# 07/17/2024
+# Functional details are in specifications.txt
+#
+
+Scrabble App
+
+The app should be able to:
+    - Check if any word is a valid scrabble word
+    - Take a bunch of letters and return all valid words that can be formed from those letters
+        * This function should have wildcard support
+    - Add new words to the scrabble dictionary
+    - Remove words from the scrabble dictionary
+    - Do all of the above within a nice UI
+
+
+We will be using a few data structures to handle those
+
