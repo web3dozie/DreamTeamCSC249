@@ -1,4 +1,5 @@
 import tkinter as tk
+from itertools import repeat
 from tkinter import ttk
 from scrabble_app import ScrabbleApp
 
@@ -7,20 +8,12 @@ class ScrabbleGUI(tk.Tk):
     def __init__(self, app):
         super().__init__()
 
-        self.execute_button = None
-        self.result_label = None
-        self.input_entry = None
-        self.input_label = None
-        self.function_menu = None
-        self.function_var = None
-        self.function_label = None
-        self.logo_label = None
-        self.logo_image = None
-        self.scrabble_app = app
+        self.execute_button, self.result_label, self.input_entry, self.input_label, self.function_menu = repeat(None)
+        self.function_var, self.function_label, self.logo_label, self.logo_image = repeat(None)
 
+        self.scrabble_app = app
         self.title("Scrabble App")
         self.geometry("400x400")
-
         self.create_widgets()
 
     def create_widgets(self):
