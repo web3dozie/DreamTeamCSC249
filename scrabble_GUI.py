@@ -55,15 +55,19 @@ class ScrabbleGUI(tk.Tk):
         if function == "Add word":
             self.scrabble_app.add_word(input_value)
             self.result_label.config(text="Word added successfully.")
+
         elif function == "Remove word":
             self.scrabble_app.remove_word(input_value)
             self.result_label.config(text="Word removed successfully.")
+
         elif function == "Check word":
             is_valid = self.scrabble_app.is_valid_word(input_value)
             self.result_label.config(text=f"This word is {'valid' if is_valid else 'invalid'}.")
+
         elif function == "Find words":
             words = self.scrabble_app.find_words_from_letters(input_value)
             self.result_label.config(text=f"Found words: {', '.join(words)}")
+
         elif function == "Word score":
             score = self.scrabble_app.word_score(input_value)
             self.result_label.config(text=f"The score for this word is {score}.")
