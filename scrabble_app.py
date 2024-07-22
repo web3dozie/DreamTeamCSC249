@@ -44,3 +44,30 @@ class ScrabbleApp:
                     valid_words.append(word)
 
         return valid_words
+
+    def word_score(self, word):
+        # Dictionary for scoring
+        letter_points = {'A': 1, 'B': 3, 'C': 3, 'D': 2, 'E': 1, 'F': 4,
+                         'G': 2, 'H': 4, 'I': 1, 'J': 8, 'K': 5, 'L': 1,
+                         'M': 3, 'N': 1, 'O': 1, 'P': 3, 'Q': 10, 'R': 1,
+                         'S': 1, 'T': 1, 'U': 1, 'V': 4, 'W': 4, 'X': 8,
+                         'Y': 4, 'Z': 10}
+
+        word = word.upper()
+        score = 0
+
+        # Iterates through word to calculate total points
+        if self.is_valid_word(word):
+            for letter in word:
+                score += letter_points[letter]
+
+            # If word uses all tiles (7 or 8 if building off another word) 50 points are added to total
+            if len(word) >= 7:
+                score += 50
+
+            return score
+        else:
+            pass
+
+
+
