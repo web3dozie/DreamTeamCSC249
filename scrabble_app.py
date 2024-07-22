@@ -9,7 +9,7 @@ class ScrabbleApp:
         with open(filename, 'r') as file:
             word_list = [line.strip() for line in file][2:]
 
-        self.words = SortedSet(word_list)  # Initialize the word list
+        self.words = SortedSet(word_list)  # Initialize the word list.
 
     def add_word(self, word):
         if re.match('^[A-Z]+$', word):  # Only actual words can be added
